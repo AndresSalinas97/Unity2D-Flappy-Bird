@@ -6,15 +6,16 @@ using UnityEngine;
 
 public class Score : MonoBehaviour
 {
-    [SerializeField] AudioSource audioSource;
     private int score = 0;
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (GameStatus.instancia.IsPlayerAlive())
         {
+            EventsManager.instance.Score();
+
             score++;
-            audioSource.Play();
+            SoundManager.instance.PlaySound(SoundManager.SoundClips.FBCoin);
             Debug.Log("Score: " + score);
         }
     }

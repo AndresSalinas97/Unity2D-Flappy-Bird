@@ -8,8 +8,6 @@ public class Movimiento : MonoBehaviour
 {
     private const float JUMP_FORCE = 250;
 
-    [SerializeField] AudioSource audioSourceAleteo;
-    [SerializeField] AudioSource audioSourceGolpe;
     private Rigidbody2D rb;
 
     void Start()
@@ -22,7 +20,7 @@ public class Movimiento : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) &&
             GameStatus.instancia.IsPlayerAlive())
         {
-            audioSourceAleteo.Play();
+            SoundManager.instance.PlaySound(SoundManager.SoundClips.Aleteo);
             rb.velocity = Vector3.zero;
             rb.AddForce(Vector3.up * JUMP_FORCE);
         }
@@ -35,7 +33,7 @@ public class Movimiento : MonoBehaviour
     {
         if (GameStatus.instancia.IsPlayerAlive())
         {
-            audioSourceGolpe.Play();
+            SoundManager.instance.PlaySound(SoundManager.SoundClips.Golpe);
         }
         GameStatus.instancia.SetPlayerAlive(false);
     }
