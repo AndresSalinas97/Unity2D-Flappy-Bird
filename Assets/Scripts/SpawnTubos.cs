@@ -16,15 +16,18 @@ public class SpawnTubos : MonoBehaviour
 
     void Start()
     {
+        EventsManager.instance.OnStartGame += StartSpawning;
+        EventsManager.instance.OnGameOver += StopSpawning;
+    }
+
+    private void StartSpawning()
+    {
         StartCoroutine("Spawn");
     }
 
-    private void Update()
+    private void StopSpawning()
     {
-        if (!GameStatus.instancia.IsPlayerAlive())
-        {
-            StopAllCoroutines();
-        }
+        StopAllCoroutines();
     }
 
     IEnumerator Spawn()

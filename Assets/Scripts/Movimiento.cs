@@ -31,10 +31,13 @@ public class Movimiento : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        EventsManager.instance.GameOver();
+
         if (GameStatus.instancia.IsPlayerAlive())
         {
             SoundManager.instance.PlaySound(SoundManager.SoundClips.Golpe);
         }
+
         GameStatus.instancia.SetPlayerAlive(false);
     }
 }

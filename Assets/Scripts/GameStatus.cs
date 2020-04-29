@@ -5,7 +5,12 @@ using UnityEngine;
 public class GameStatus : MonoBehaviour
 {
     public static GameStatus instancia;
-    private bool playerAlive = true;
+    private bool playerAlive = false;
+
+    private void Start()
+    {
+        EventsManager.instance.OnStartGame += SetPlayerLive;
+    }
 
     public bool IsPlayerAlive()
     {
@@ -27,5 +32,10 @@ public class GameStatus : MonoBehaviour
         {
             GameStatus.instancia = this;
         }
+    }
+
+    private void SetPlayerLive()
+    {
+        SetPlayerAlive(true);
     }
 }

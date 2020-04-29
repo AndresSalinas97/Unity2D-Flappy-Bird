@@ -18,4 +18,16 @@ public class EventsManager : MonoBehaviour
             EventsManager.instance = this;
         }
     }
+
+    public event Action OnStartGame;
+    public void StartGame()
+    {
+        OnStartGame?.Invoke();  // if (OnStartGame != null) { OnStartGame(); }
+    }
+
+    public event Action OnGameOver;
+    public void GameOver()
+    {
+        OnGameOver?.Invoke();
+    }
 }
