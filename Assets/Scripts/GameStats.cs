@@ -1,0 +1,32 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class GameStats : MonoBehaviour
+{
+    public static GameStats instance;
+
+    private int score = 0;
+
+    private void Awake()
+    {
+        if (GameStats.instance != null)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            GameStats.instance = this;
+        }
+    }
+
+    public int GetScore()
+    {
+        return score;
+    }
+
+    public void SetScore(int score)
+    {
+        this.score = score;
+    }
+}

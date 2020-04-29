@@ -18,10 +18,4 @@ public class EventsManager : MonoBehaviour
             EventsManager.instance = this;
         }
     }
-
-    public event Action OnScore;
-    public void Score()
-    {
-        OnScore?.Invoke();  // if (OnScore != null) { OnScore(); }
-    }
 }

@@ -1,16 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIScore : MonoBehaviour
 {
+    private Text scoreText;
+
     void Start()
     {
-        EventsManager.instance.OnScore += imprimeAlgo;
+        scoreText = GetComponent<Text>();
     }
 
-    private void imprimeAlgo()
+    private void Update()
     {
-        Debug.Log("Evento llamado");
+        scoreText.text = GameStats.instance.GetScore().ToString();
     }
 }
