@@ -18,6 +18,11 @@ public class UIScore : MonoBehaviour
         scoreText.text = GameStats.instance.GetScore().ToString();
     }
 
+    private void OnDestroy()
+    {
+        EventsManager.instance.OnGameOver -= hideScore;
+    }
+
     private void hideScore()
     {
         this.gameObject.SetActive(false);

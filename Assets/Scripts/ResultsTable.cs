@@ -18,6 +18,11 @@ public class ResultsTable : MonoBehaviour
         EventsManager.instance.OnGameOver += SpawnResults;
     }
 
+    private void OnDestroy()
+    {
+        EventsManager.instance.OnGameOver -= SpawnResults;
+    }
+
     private void SpawnResults()
 	{
         int finalScore = GameStats.instance.GetScore();

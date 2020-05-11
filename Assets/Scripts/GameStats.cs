@@ -8,6 +8,11 @@ public class GameStats : MonoBehaviour
 
     private int score = 0;
 
+    private void Start()
+    {
+        EventsManager.instance.OnStartGame += ResetScore;
+    }
+
     private void Awake()
     {
         if (GameStats.instance != null)
@@ -28,5 +33,10 @@ public class GameStats : MonoBehaviour
     public void SetScore(int score)
     {
         this.score = score;
+    }
+
+    private void ResetScore()
+    {
+        score = 0;
     }
 }
