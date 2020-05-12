@@ -62,9 +62,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8852554477533598021}
   - component: {fileID: 1780205419341937455}
-  - component: {fileID: 2120573480050830916}
+  - component: {fileID: 4521758526713823798}
   m_Layer: 0
-  m_Name: FilaTubo
+  m_Name: TubePair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -112,7 +112,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3088094, y: 2.6539183}
   m_EdgeRadius: 0
---- !u!114 &2120573480050830916
+--- !u!114 &4521758526713823798
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8852554477533598022}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d414d614d07b34dfaa2da23b8fe55170, type: 3}
+  m_Script: {fileID: 11500000, guid: 0b6f406c7c9a443baa69805c9998b10e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &8852554475793656971
@@ -134,7 +134,7 @@ PrefabInstance:
     - target: {fileID: 2242540590393183404, guid: 85d3bc1ba1555894b932ed5f38f28cfd,
         type: 3}
       propertyPath: m_Name
-      value: Tubo2
+      value: Tube2
       objectReference: {fileID: 0}
     - target: {fileID: 2242540590393183404, guid: 85d3bc1ba1555894b932ed5f38f28cfd,
         type: 3}
@@ -245,7 +245,7 @@ PrefabInstance:
     - target: {fileID: 2242540590393183404, guid: 85d3bc1ba1555894b932ed5f38f28cfd,
         type: 3}
       propertyPath: m_Name
-      value: Tubo1
+      value: Tube1
       objectReference: {fileID: 0}
     - target: {fileID: 2242540590393183404, guid: 85d3bc1ba1555894b932ed5f38f28cfd,
         type: 3}

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovimientoTubo : MonoBehaviour
+public class MoveTubePair : MonoBehaviour
 {
     private const float SPEED = 3f;
     private const float LIMITE_X = -4.5f;

@@ -12,9 +12,9 @@ public class SoundManager : MonoBehaviour
     private AudioSource audioSource;
     public enum SoundClips
     {
-        Aleteo,
-        FBCoin,
-        Golpe,
+        Flap,
+        Coin,
+        Crash,
     }
 
     private void Awake()

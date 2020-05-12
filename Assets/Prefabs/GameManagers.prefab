@@ -241,7 +241,7 @@ GameObject:
   - component: {fileID: 1948284869588815857}
   - component: {fileID: 1948284869588815858}
   m_Layer: 0
-  m_Name: SpawnTubos
+  m_Name: SpawnTubePair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

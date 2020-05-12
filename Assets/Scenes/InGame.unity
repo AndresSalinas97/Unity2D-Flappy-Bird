@@ -196,7 +196,7 @@ PrefabInstance:
     - target: {fileID: 3605851284536393220, guid: 4be45cb264ef44755a308eb2b76347f8,
         type: 3}
       propertyPath: m_Name
-      value: Colisionables
+      value: Stationary
       objectReference: {fileID: 0}
     - target: {fileID: 3605851284536393223, guid: 4be45cb264ef44755a308eb2b76347f8,
         type: 3}
@@ -439,7 +439,7 @@ PrefabInstance:
     - target: {fileID: 5709301373868826757, guid: 358f652ef3ad044b19be254424599d77,
         type: 3}
       propertyPath: m_Name
-      value: CanvasJuego
+      value: GameCanvas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 358f652ef3ad044b19be254424599d77, type: 3}
@@ -522,7 +522,7 @@ PrefabInstance:
     - target: {fileID: 7945798170139983516, guid: c733d15d4a79b48d0af4465142957972,
         type: 3}
       propertyPath: m_Name
-      value: Decoracion
+      value: Decoration
       objectReference: {fileID: 0}
     - target: {fileID: 7945798170139983517, guid: c733d15d4a79b48d0af4465142957972,
         type: 3}

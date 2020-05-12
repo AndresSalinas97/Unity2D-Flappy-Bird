@@ -11,7 +11,7 @@ public class Score : MonoBehaviour
         if (GameStatus.instancia.IsPlayerAlive())
         {
             GameStats.instance.SetScore(GameStats.instance.GetScore() + 1);
-            SoundManager.instance.PlaySound(SoundManager.SoundClips.FBCoin);
+            SoundManager.instance.PlaySound(SoundManager.SoundClips.Coin);
         }
     }
 }

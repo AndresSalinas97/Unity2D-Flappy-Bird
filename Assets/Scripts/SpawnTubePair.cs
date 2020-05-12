@@ -4,7 +4,7 @@ using UnityEngine;
 
 # pragma warning disable 649 // Para desactivar warnings por los SerializeFields
 
-public class SpawnTubos : MonoBehaviour
+public class SpawnTubePair : MonoBehaviour
 {
     private const float MIN_Y = -1.5f;
     private const float MAX_Y = 2.5f;

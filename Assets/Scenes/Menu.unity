@@ -275,7 +275,7 @@ PrefabInstance:
     - target: {fileID: 7945798170139983516, guid: c733d15d4a79b48d0af4465142957972,
         type: 3}
       propertyPath: m_Name
-      value: Decoracion
+      value: Decoration
       objectReference: {fileID: 0}
     - target: {fileID: 7945798170139983517, guid: c733d15d4a79b48d0af4465142957972,
         type: 3}
@@ -547,7 +547,7 @@ PrefabInstance:
     - target: {fileID: 1392361010518062623, guid: e1c2a3a185484423282fe22bac5b449f,
         type: 3}
       propertyPath: m_Name
-      value: Titulo
+      value: Title
       objectReference: {fileID: 0}
     - target: {fileID: 6474894319052621652, guid: e1c2a3a185484423282fe22bac5b449f,
         type: 3}

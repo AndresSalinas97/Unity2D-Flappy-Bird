@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3605851283192092039}
   - component: {fileID: 3605851283192092040}
   m_Layer: 0
-  m_Name: FloorFB
+  m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -131,7 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3605851284536393223}
   m_Layer: 0
-  m_Name: Colisionables
+  m_Name: Stationary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

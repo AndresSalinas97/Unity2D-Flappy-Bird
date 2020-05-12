@@ -4,7 +4,7 @@ using UnityEngine;
 
 # pragma warning disable 649 // Para desactivar warnings por los SerializeFields
 
-public class Movimiento : MonoBehaviour
+public class BirdFlap : MonoBehaviour
 {
     private const float JUMP_FORCE = 250;
 
@@ -20,7 +20,7 @@ public class Movimiento : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) &&
             GameStatus.instancia.IsPlayerAlive())
         {
-            SoundManager.instance.PlaySound(SoundManager.SoundClips.Aleteo);
+            SoundManager.instance.PlaySound(SoundManager.SoundClips.Flap);
             rb.velocity = Vector3.zero;
             rb.AddForce(Vector3.up * JUMP_FORCE);
         }
@@ -35,7 +35,7 @@ public class Movimiento : MonoBehaviour
 
         if (GameStatus.instancia.IsPlayerAlive())
         {
-            SoundManager.instance.PlaySound(SoundManager.SoundClips.Golpe);
+            SoundManager.instance.PlaySound(SoundManager.SoundClips.Crash);
         }
 
         GameStatus.instancia.SetPlayerAlive(false);
