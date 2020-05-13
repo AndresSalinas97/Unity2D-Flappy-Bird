@@ -15,7 +15,7 @@ public class UIScore : MonoBehaviour
 
     private void Update()
     {
-        scoreText.text = GameStats.instance.GetScore().ToString();
+        scoreText.text = ScoreManager.instance.GetScore().ToString();
     }
 
     private void OnDestroy()

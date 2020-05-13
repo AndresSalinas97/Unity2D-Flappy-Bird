@@ -97,7 +97,7 @@ public class BirdFlap : MonoBehaviour
     {
         if (GameStatus.instance.IsPlayerAlive())
         {
-            GameStats.instance.IncreaseScore();
+            EventsManager.instance.TubesCrossed();
              
             SoundManager.instance.PlaySound(SoundManager.SoundClips.Coin);
         }

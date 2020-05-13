@@ -19,10 +19,16 @@ public class EventsManager : MonoBehaviour
         }
     }
 
-    public event Action OnStartGame;
-    public void StartGame()
+    public event Action OnGameStarted;
+    public void GameStarted()
     {
-        OnStartGame?.Invoke();  // if (OnStartGame != null) { OnStartGame(); }
+        OnGameStarted?.Invoke();
+    }
+
+    public event Action OnTubesCrossed;
+    public void TubesCrossed()
+    {
+        OnTubesCrossed?.Invoke();
     }
 
     public event Action OnGameOver;

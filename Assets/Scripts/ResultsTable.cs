@@ -23,7 +23,7 @@ public class ResultsTable : MonoBehaviour
 
     private void SpawnResults()
 	{
-        int finalScore = GameStats.instance.GetScore();
+        int finalScore = ScoreManager.instance.GetScore();
 
         if (finalScore < 5)
         {

@@ -9,7 +9,7 @@ public class GameStatus : MonoBehaviour
 
     private void Start()
     {
-        EventsManager.instance.OnStartGame += SetPlayerAliveTrue;
+        EventsManager.instance.OnGameStarted += SetPlayerAliveTrue;
         EventsManager.instance.OnGameOver += SetPlayerAliveFalse;
     }
 

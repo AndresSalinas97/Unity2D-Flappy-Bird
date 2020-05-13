@@ -16,7 +16,7 @@ public class SpawnTubePair : MonoBehaviour
 
     void Start()
     {
-        EventsManager.instance.OnStartGame += StartSpawning;
+        EventsManager.instance.OnGameStarted += StartSpawning;
         EventsManager.instance.OnGameOver += StopSpawning;
     }
 

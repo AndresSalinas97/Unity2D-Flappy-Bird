@@ -2,26 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameStats : MonoBehaviour
+public class ScoreManager : MonoBehaviour
 {
-    public static GameStats instance;
+    public static ScoreManager instance;
 
     private int score = 0;
 
     private void Start()
     {
-        EventsManager.instance.OnStartGame += ResetScore;
+        EventsManager.instance.OnGameStarted += ResetScore;
+        EventsManager.instance.OnTubesCrossed += IncreaseScore;
     }
 
     private void Awake()
     {
-        if (GameStats.instance != null)
+        if (ScoreManager.instance != null)
         {
             Destroy(this.gameObject);
         }
         else
         {
-            GameStats.instance = this;
+            ScoreManager.instance = this;
         }
     }
 
@@ -30,12 +31,7 @@ public class GameStats : MonoBehaviour
         return score;
     }
 
-    public void SetScore(int score)
-    {
-        this.score = score;
-    }
-
-    public void IncreaseScore()
+    private void IncreaseScore()
     {
         score++;
     }
