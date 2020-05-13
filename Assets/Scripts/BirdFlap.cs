@@ -22,7 +22,7 @@ public class BirdFlap : MonoBehaviour
     private Rigidbody2D rigidBody;
 
     /// <summary>
-    /// Start is called before the first frame update.
+    /// Start is called just before the first frame update.
     /// </summary>
     private void Start()
     {
