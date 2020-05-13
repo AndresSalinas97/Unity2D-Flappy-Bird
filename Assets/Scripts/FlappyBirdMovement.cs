@@ -4,7 +4,7 @@
 /// This class handles the bird movement and everything that comes with it
 /// (playing sound effects, increasing the score and detecting game over).
 /// </summary>
-public class BirdFlap : MonoBehaviour
+public class FlappyBirdMovement : MonoBehaviour
 {
     /// <summary>
     /// Flap force.
@@ -34,7 +34,7 @@ public class BirdFlap : MonoBehaviour
     /// </summary>
     private void Update()
     {
-        if (GameStatus.instance.IsPlayerAlive())
+        if (PlayerStatusManager.instance.IsPlayerAlive())
         {
 #if UNITY_EDITOR || UNITY_STANDALONE
             // CODE FOR UNITY EDITOR & STANDALONE APPS (keyboard input)
@@ -80,7 +80,7 @@ public class BirdFlap : MonoBehaviour
     /// </summary>
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (GameStatus.instance.IsPlayerAlive())
+        if (PlayerStatusManager.instance.IsPlayerAlive())
         {
             EventsManager.instance.GameOver();
 
@@ -95,7 +95,7 @@ public class BirdFlap : MonoBehaviour
     /// <param name="collision"></param>
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (GameStatus.instance.IsPlayerAlive())
+        if (PlayerStatusManager.instance.IsPlayerAlive())
         {
             EventsManager.instance.TubesCrossed();
              

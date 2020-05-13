@@ -13,7 +13,8 @@ public class EventsManager : MonoBehaviour
 
     /// <summary>
     /// Awake is called after all objects are initialized, before the game
-    /// starts. It creates a new EventsManager in case there isn't one yet.
+    /// starts. It sets the instance value to reference this instance or
+    /// destroys this object in case it's already set.
     /// </summary>
     private void Awake()
     {

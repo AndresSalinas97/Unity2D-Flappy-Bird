@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIScore : MonoBehaviour
+public class ScoreText : MonoBehaviour
 {
     private Text scoreText;
 

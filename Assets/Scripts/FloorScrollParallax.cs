@@ -1,20 +1,36 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-# pragma warning disable 649  // To disable SerializeField warnings
-
+/// <summary>
+/// This class makes the floor scroll.
+/// </summary>
 public class FloorScrollParallax : MonoBehaviour
 {
+    /// <summary>
+    /// Scroll speed carefully chosen to match the tubes speed.
+    /// </summary>
     private const float SPEED = 0.37f;
 
-    [SerializeField] Material m;
+    /// <summary>
+    /// Floor material.
+    /// </summary>
+    private Material material;
 
-    void Update()
+    /// <summary>
+    /// Start is called just before the first frame update.
+    /// </summary>
+    private void Start()
     {
-        if (GameStatus.instance.IsPlayerAlive())
+        material = GetComponent<Renderer>().material;
+    }
+
+    /// <summary>
+    /// Update is called once per frame.
+    /// </summary>
+    private void Update()
+    {
+        if (PlayerStatusManager.instance.IsPlayerAlive())
         {
-            m.mainTextureOffset += new Vector2(Time.deltaTime * SPEED, 0);
+            material.mainTextureOffset += new Vector2(Time.deltaTime * SPEED, 0);
         }
     }
 }

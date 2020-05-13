@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameStatus : MonoBehaviour
+public class PlayerStatusManager : MonoBehaviour
 {
-    public static GameStatus instance;
+    public static PlayerStatusManager instance;
     private bool playerAlive = false;
 
     private void Start()
@@ -25,13 +25,13 @@ public class GameStatus : MonoBehaviour
 
     private void Awake()
     {
-        if (GameStatus.instance != null)
+        if (PlayerStatusManager.instance != null)
         {
             Destroy(this.gameObject);
         }
         else
         {
-            GameStatus.instance = this;
+            PlayerStatusManager.instance = this;
         }
     }
 

@@ -310,7 +310,7 @@ GameObject:
   - component: {fileID: 5195422909405832431}
   - component: {fileID: 5195422909405832430}
   - component: {fileID: 5195422909405832429}
-  - component: {fileID: 2140702561}
+  - component: {fileID: 859722937678213523}
   m_Layer: 5
   m_Name: VolumeScrollbar
   m_TagString: Untagged
@@ -423,7 +423,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2140702561}
+      - m_Target: {fileID: 859722937678213523}
         m_MethodName: SetVolumeValue
         m_Mode: 1
         m_Arguments:
@@ -434,7 +434,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2140702561
+--- !u!114 &859722937678213523
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
