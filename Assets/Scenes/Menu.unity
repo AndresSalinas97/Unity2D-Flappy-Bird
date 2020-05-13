@@ -399,7 +399,7 @@ PrefabInstance:
     - target: {fileID: 6050365568747262181, guid: de72f674ff03f4823b2765bc2c88b106,
         type: 3}
       propertyPath: m_Name
-      value: Main Camera
+      value: MainCamera
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de72f674ff03f4823b2765bc2c88b106, type: 3}
@@ -428,7 +428,7 @@ PrefabInstance:
     - target: {fileID: 5195422911179376685, guid: 768a6746ec2bc4d69a8bafecdd17a5a7,
         type: 3}
       propertyPath: m_Name
-      value: CanvasMenu
+      value: MenuCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 5195422911179376689, guid: 768a6746ec2bc4d69a8bafecdd17a5a7,
         type: 3}
