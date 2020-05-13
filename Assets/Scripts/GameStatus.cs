@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class GameStatus : MonoBehaviour
 {
-    public static GameStatus instancia;
+    public static GameStatus instance;
     private bool playerAlive = false;
 
     private void Start()
     {
-        EventsManager.instance.OnStartGame += SetPlayerLive;
+        EventsManager.instance.OnStartGame += SetPlayerAliveTrue;
+        EventsManager.instance.OnGameOver += SetPlayerAliveFalse;
     }
 
     public bool IsPlayerAlive()
@@ -24,18 +25,23 @@ public class GameStatus : MonoBehaviour
 
     private void Awake()
     {
-        if (GameStatus.instancia != null)
+        if (GameStatus.instance != null)
         {
             Destroy(this.gameObject);
         }
         else
         {
-            GameStatus.instancia = this;
+            GameStatus.instance = this;
         }
     }
 
-    private void SetPlayerLive()
+    private void SetPlayerAliveTrue()
     {
-        SetPlayerAlive(true);
+        playerAlive = true;
+    }
+
+    private void SetPlayerAliveFalse()
+    {
+        playerAlive = false;
     }
 }

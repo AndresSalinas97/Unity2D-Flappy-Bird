@@ -35,6 +35,11 @@ public class GameStats : MonoBehaviour
         this.score = score;
     }
 
+    public void IncreaseScore()
+    {
+        score++;
+    }
+
     private void ResetScore()
     {
         score = 0;
