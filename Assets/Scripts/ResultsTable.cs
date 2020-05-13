@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-# pragma warning disable 649 // Para desactivar warnings por los SerializeFields
+# pragma warning disable 649  // To disable SerializeField warnings
 
 public class ResultsTable : MonoBehaviour
 {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-# pragma warning disable 649 // Para desactivar warnings por los SerializeFields
+# pragma warning disable 649  // To disable SerializeField warnings
 
 public class FloorScrollParallax : MonoBehaviour
 {
@@ -12,7 +12,7 @@ public class FloorScrollParallax : MonoBehaviour
 
     void Update()
     {
-        if (GameStatus.instancia.IsPlayerAlive())
+        if (GameStatus.instance.IsPlayerAlive())
         {
             m.mainTextureOffset += new Vector2(Time.deltaTime * SPEED, 0);
         }

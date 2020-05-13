@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-# pragma warning disable 649 // Para desactivar warnings por los SerializeFields
+# pragma warning disable 649  // To disable SerializeField warnings
 
 public class SpawnTubePair : MonoBehaviour
 {
