@@ -13,8 +13,6 @@ public class ResultsTable : MonoBehaviour
 
     void Start()
     {
-        this.gameObject.SetActive(false);
-
         EventsManager.instance.OnGameOver += SpawnResults;
     }
 
@@ -26,8 +24,6 @@ public class ResultsTable : MonoBehaviour
     private void SpawnResults()
 	{
         int finalScore = GameStats.instance.GetScore();
-
-        this.gameObject.SetActive(true);
 
         if (finalScore < 5)
         {
