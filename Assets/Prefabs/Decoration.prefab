@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7945798170139983517}
   m_Layer: 0
-  m_Name: Decoracion
+  m_Name: Decoration
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56,7 +56,7 @@ PrefabInstance:
     - target: {fileID: 3752671522679258567, guid: ac3915dbecebb224bbbcdd3bf78b4539,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.0009
       objectReference: {fileID: 0}
     - target: {fileID: 3752671522679258567, guid: ac3915dbecebb224bbbcdd3bf78b4539,
         type: 3}
@@ -111,7 +111,7 @@ PrefabInstance:
     - target: {fileID: 3752671522679258567, guid: ac3915dbecebb224bbbcdd3bf78b4539,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 5.5
+      value: 5.7286496
       objectReference: {fileID: 0}
     - target: {fileID: 3752671522679258567, guid: ac3915dbecebb224bbbcdd3bf78b4539,
         type: 3}
