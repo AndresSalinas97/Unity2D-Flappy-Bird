@@ -34,7 +34,7 @@ public class TubePairSpawner : MonoBehaviour
     private const float TIME_GAP = 1.7f;
 
     /// <summary>
-    /// Time (in seconds) that takes the first tube pair to be spawned.
+    /// Time (in seconds) it takes for the first tube pair to be spawned.
     /// </summary>
     private const float FIRST_TUBE_DELAY = 0.1f;
 
