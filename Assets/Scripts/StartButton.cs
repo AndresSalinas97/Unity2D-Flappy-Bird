@@ -1,11 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
+/// <summary>
+/// Contains the start button actions.
+/// </summary>
 public class StartButton : MonoBehaviour
 {
+    /// <summary>
+    /// Loads the InGame scene.
+    /// </summary>
     public void StartGame()
     {
-        EventsManager.instance.GameStarted();
+        SceneChanger.instance.LoadInGameScene();
     }
 }

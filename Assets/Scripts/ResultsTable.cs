@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 /// <summary>
 /// This class is in charge of showing the results table and all the elements
-/// inside it.
+/// inside of it.
 /// </summary>
 public class ResultsTable : MonoBehaviour
 {
@@ -30,7 +30,7 @@ public class ResultsTable : MonoBehaviour
     [SerializeField] Sprite coinBronze;
 
     /// <summary>
-    /// Silver coin sprinte.
+    /// Silver coin sprite.
     /// </summary>
     [SerializeField] Sprite coinSilver;
 
@@ -40,7 +40,7 @@ public class ResultsTable : MonoBehaviour
     [SerializeField] Sprite coinGold;
 
     /// <summary>
-    /// Image where the coin sprites will be loaded.
+    /// Image where the coin sprite will be loaded.
     /// </summary>
     [SerializeField] Image coinImage;
 
@@ -61,6 +61,8 @@ public class ResultsTable : MonoBehaviour
     {
         EventsManager.instance.OnGameOver += LoadResultsTable;
 
+        // In case this object wasn't started when the OnGameOver event was
+        // raised (the parent can be disabled before their childs are started)
         LoadResultsTable();
     }
 
@@ -85,7 +87,7 @@ public class ResultsTable : MonoBehaviour
         coinImage.enabled = false;
 
         // Set the corresponding coin and shows the image (in case the player
-        // deserve it)
+        // deserves one)
         if (finalScore >= BRONZE_MIN_SCORE && finalScore < SILVER_MIN_SCORE)
         {
             coinImage.sprite = coinBronze;

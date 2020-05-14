@@ -36,6 +36,7 @@ public class ScoreText : MonoBehaviour
     {
         scoreText.text = ScoreManager.instance.GetCurrentScore().ToString();
 
+        // When setting a new record the score text becomes bigger, red and bold
         if (ScoreManager.instance.SettingRecord())
         {
             scoreText.color = Color.red;

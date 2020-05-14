@@ -29,23 +29,17 @@ public class SceneChanger : MonoBehaviour
     }
 
     /// <summary>
-    /// Start is called just before the first frame update.
+    /// Loads the InGame scene and raises the OnGameStarted event.
     /// </summary>
-    private void Start()
-    {
-        EventsManager.instance.OnGameStarted += LoadInGameScene;
-    }
-
-    private void OnDestroy()
-    {
-        EventsManager.instance.OnGameStarted -= LoadInGameScene;
-    }
-
     public void LoadInGameScene()
     {
         SceneManager.LoadScene("InGame");
+        EventsManager.instance.GameStarted();
     }
 
+    /// <summary>
+    /// Loads the Menu scene.
+    /// </summary>
     public void LoadMenuScene()
     {
         SceneManager.LoadScene("Menu");

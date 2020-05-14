@@ -24,10 +24,11 @@ public class FloorScrollParallax : MonoBehaviour
     }
 
     /// <summary>
-    /// Update is called once per frame. It makes the floor scroll.
+    /// Update is called once per frame.
     /// </summary>
     private void Update()
     {
+        // Only moves if the player is alive
         if (PlayerStatusManager.instance.IsPlayerAlive())
         {
             material.mainTextureOffset += new Vector2(Time.deltaTime * SPEED, 0);

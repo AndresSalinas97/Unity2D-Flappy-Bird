@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 
 /// <summary>
-/// This singleton class handles the player status, that is, it knows if the
-/// player is alive or dead.
+/// This singleton class keeps track of the player status, which is alive or dead.
 /// </summary>
 public class PlayerStatusManager : MonoBehaviour
 {
@@ -18,8 +17,7 @@ public class PlayerStatusManager : MonoBehaviour
 
     /// <summary>
     /// Awake is called after all objects are initialized, before the game
-    /// starts. It sets the instance value to reference this instance or
-    /// destroys this object in case it's already set.
+    /// starts.
     /// </summary>
     private void Awake()
     {
@@ -68,7 +66,7 @@ public class PlayerStatusManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Sets playerAlive to falase.
+    /// Sets playerAlive to false.
     /// </summary>
     private void SetPlayerAliveFalse()
     {

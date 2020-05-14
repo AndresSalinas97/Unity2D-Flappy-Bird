@@ -2,7 +2,8 @@
 
 /// <summary>
 /// This class handles the bird movement and everything that comes with it
-/// (playing sound effects, increasing the score and detecting game over).
+/// (detecting when the bird crosses a tube pair or crashes and raising the
+/// corresponding events).
 /// </summary>
 public class FlappyBirdMovement : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class FlappyBirdMovement : MonoBehaviour
     private const float FLAP_FORCE = 250;
 
     /// <summary>
-    /// Rotation force (rotation is proportional to speed on y axis).
+    /// Rotation force (rotation is proportional to the speed on the y axis).
     /// </summary>
     private const float ROTATION_FORCE = 10;
 
@@ -30,47 +31,57 @@ public class FlappyBirdMovement : MonoBehaviour
     }
 
     /// <summary>
-    /// Update is called once per frame. It handles the bird movement.
+    /// Update is called once per frame.
     /// </summary>
     private void Update()
     {
+        // If the player is alive, allow the user to make the bird flap
         if (PlayerStatusManager.instance.IsPlayerAlive())
         {
 #if UNITY_EDITOR || UNITY_STANDALONE
             // CODE FOR UNITY EDITOR & STANDALONE APPS (keyboard input)
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                // Make bird flap
-                rigidBody.velocity = Vector3.zero;
-                rigidBody.AddForce(Vector3.up * FLAP_FORCE);
-
-                // Play flap sound
-                SoundManager.instance.PlaySound(SoundManager.SoundClips.Flap);
+                BirdFlap();
             }
 #elif UNITY_ANDROID || UNITY_IOS
             // CODE FOR ANDROID & iOS APPS (touchscreen input)
             if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Ended)
             {
-                // Make bird flap
-                rigidBody.velocity = Vector3.zero;
-                rigidBody.AddForce(Vector3.up * FLAP_FORCE);
-
-                // Play flap sound
-                SoundManager.instance.PlaySound(SoundManager.SoundClips.Flap);
+                BirdFlap();
             }
 #endif
+        }
 
-            // Make bird rotate as it moves
-            // The following "if statement" limits the rotation when in free
-            // fall so the bird doesn't turn upside down
-            if (transform.eulerAngles.z >= 0 && transform.eulerAngles.z < 90 ||
-                transform.eulerAngles.z > 270 && transform.eulerAngles.z < 360 ||
-                rigidBody.velocity.y > 0)
-            {
-                // Rotation is proportional to speed on y axis
-                float rotationAux = rigidBody.velocity.y * ROTATION_FORCE;
-                transform.rotation = Quaternion.Euler(0, 0, rotationAux);
-            }
+        BirdRotate();
+    }
+
+    /// <summary>
+    /// Makes the bird flap.
+    /// </summary>
+    private void BirdFlap()
+    {
+        // Make bird flap
+        rigidBody.velocity = Vector3.zero;
+        rigidBody.AddForce(Vector3.up * FLAP_FORCE);
+
+        // Play flap sound
+        SoundManager.instance.PlaySound(SoundManager.SoundClips.Flap);
+    }
+
+    /// <summary>
+    /// Makes the bird rotate as it moves so it feels more natural.
+    /// </summary>
+    private void BirdRotate()
+    {
+        // Limit the rotation when in free fall so the bird doesn't turn upside down
+        //if (transform.eulerAngles.z >= 0 && transform.eulerAngles.z < 90 ||
+        //    transform.eulerAngles.z > 270 && transform.eulerAngles.z < 360 ||
+        //    rigidBody.velocity.y > 0)
+        {
+            // Rotation is proportional to the speed on the y axis
+            float rotationAux = rigidBody.velocity.y * ROTATION_FORCE;
+            transform.rotation = Quaternion.Euler(0, 0, rotationAux);
         }
     }
 
@@ -80,6 +91,7 @@ public class FlappyBirdMovement : MonoBehaviour
     /// </summary>
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        // Checks if the player is alive so it is only run once
         if (PlayerStatusManager.instance.IsPlayerAlive())
         {
             EventsManager.instance.GameOver();
@@ -95,6 +107,7 @@ public class FlappyBirdMovement : MonoBehaviour
     /// <param name="collision"></param>
     private void OnTriggerExit2D(Collider2D collision)
     {
+        // Only detects the cross if the player is alive
         if (PlayerStatusManager.instance.IsPlayerAlive())
         {
             EventsManager.instance.TubesCrossed();
