@@ -29,6 +29,11 @@ public class ScoreManager : MonoBehaviour
     private int bestScore;
 
     /// <summary>
+    /// The previous best score and the one that is currently saved on the file.
+    /// </summary>
+    private int lastBestScore;
+
+    /// <summary>
     /// The complete file path where the best score will be saved.
     /// </summary>
     private string filePath;
@@ -57,8 +62,11 @@ public class ScoreManager : MonoBehaviour
     {
         EventsManager.instance.OnGameStarted += ResetScore;
         EventsManager.instance.OnTubesCrossed += IncreaseScore;
+        EventsManager.instance.OnGameOver += SaveBestScore;
 
         filePath = Application.persistentDataPath + "/" + FILE_NAME;
+
+        Debug.Log(filePath);
 
         LoadBestScore();
     }
@@ -68,8 +76,9 @@ public class ScoreManager : MonoBehaviour
     /// </summary>
     private void OnDestroy()
     {
-        EventsManager.instance.OnTubesCrossed -= IncreaseScore;
         EventsManager.instance.OnGameStarted -= ResetScore;
+        EventsManager.instance.OnTubesCrossed -= IncreaseScore;
+        EventsManager.instance.OnGameOver -= SaveBestScore;
     }
 
     /// <summary>
@@ -98,7 +107,6 @@ public class ScoreManager : MonoBehaviour
         if (currentScore > bestScore)
         {
             bestScore = currentScore;
-            SaveBestScore();
         }
     }
 
@@ -120,7 +128,7 @@ public class ScoreManager : MonoBehaviour
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.Open(filePath, FileMode.Open);
 
-            bestScore = (int)bf.Deserialize(file);
+            bestScore = lastBestScore = (int)bf.Deserialize(file);
 
             file.Close();
         }
@@ -135,11 +143,33 @@ public class ScoreManager : MonoBehaviour
     /// </summary>
     private void SaveBestScore()
     {
-        BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = new FileStream(filePath, FileMode.Create);
+        if (SettingRecord())
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = new FileStream(filePath, FileMode.Create);
 
-        bf.Serialize(file, bestScore);
+            bf.Serialize(file, bestScore);
 
-        file.Close();
+            file.Close();
+
+            lastBestScore = bestScore;
+
+            Debug.Log("GUARDO");
+        }
+    }
+
+    /// <summary>
+    /// Returns true if the current score is the best score.
+    /// </summary>
+    public bool SettingRecord()
+    {
+        if (bestScore > lastBestScore)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }
