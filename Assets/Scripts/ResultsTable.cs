@@ -59,13 +59,9 @@ public class ResultsTable : MonoBehaviour
     /// </summary>
     private void Start()
     {
-        // Hide the results table until it's time to show it.
-        this.gameObject.SetActive(false);
+        EventsManager.instance.OnGameOver += LoadResultsTable;
 
-        // Hide the coin image until it's time to show it.
-        coinImage.enabled = false;
-
-        EventsManager.instance.OnGameOver += ShowResultsTable;
+        LoadResultsTable();
     }
 
     /// <summary>
@@ -73,19 +69,23 @@ public class ResultsTable : MonoBehaviour
     /// </summary>
     private void OnDestroy()
     {
-        EventsManager.instance.OnGameOver -= ShowResultsTable;
+        EventsManager.instance.OnGameOver -= LoadResultsTable;
     }
 
     /// <summary>
-    /// Shows the results table and all the elements inside it.
+    /// Loads all the elements inside the results table.
     /// </summary>
-    private void ShowResultsTable()
-	{
-        // Gets the final and best scores
+    private void LoadResultsTable()
+    {
+        // Get the final and best scores
         int finalScore = ScoreManager.instance.GetCurrentScore();
         int bestScore = ScoreManager.instance.GetBestScore();
 
-        // Sets the corresponding coin
+        // Hide the coin image until it's time to show it.
+        coinImage.enabled = false;
+
+        // Set the corresponding coin and shows the image (in case the player
+        // deserve it)
         if (finalScore >= BRONZE_MIN_SCORE && finalScore < SILVER_MIN_SCORE)
         {
             coinImage.sprite = coinBronze;
@@ -102,11 +102,8 @@ public class ResultsTable : MonoBehaviour
             coinImage.enabled = true;
         }
 
-        // Sets the finalScoreText and the bestScoreText
+        // Set the finalScoreText and the bestScoreText
         finalScoreText.text = finalScore.ToString();
         bestScoreText.text = bestScore.ToString();
-
-        // Shows the results table
-        this.gameObject.SetActive(true);
     }
 }

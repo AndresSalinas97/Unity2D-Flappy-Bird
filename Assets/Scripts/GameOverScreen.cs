@@ -10,9 +10,9 @@ public class GameOverScreen : MonoBehaviour
     /// </summary>
     private void Start()
     {
-        this.gameObject.SetActive(false);
-
         EventsManager.instance.OnGameOver += ShowGameOverScreen;
+
+        this.gameObject.SetActive(false);
     }
 
     /// <summary>

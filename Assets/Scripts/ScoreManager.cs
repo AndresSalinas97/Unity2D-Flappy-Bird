@@ -89,7 +89,7 @@ public class ScoreManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Increases the currenet score.
+    /// Increases the current score.
     /// </summary>
     private void IncreaseScore()
     {
