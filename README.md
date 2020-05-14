@@ -8,4 +8,4 @@ It's meant to be built for (and has been tested on) Android, but it also works o
 
 Unity's Platform Dependent Compilation feature was used so you can control the flappy bird by pressing the spacebar if you are on a computer or by tapping the touchscreen if you are on a mobile device.
 
-Go download the .apk from the releases page and try it out!!
+Go download the .apk from the [releases page](https://github.com/AndresSalinas97/Unity2D-Flappy-Bird/releases) and try it out!!
