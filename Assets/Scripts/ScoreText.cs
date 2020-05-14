@@ -15,7 +15,7 @@ public class ScoreText : MonoBehaviour
 
     private void Update()
     {
-        scoreText.text = ScoreManager.instance.GetScore().ToString();
+        scoreText.text = ScoreManager.instance.GetCurrentScore().ToString();
     }
 
     private void OnDestroy()

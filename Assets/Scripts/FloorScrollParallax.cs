@@ -24,7 +24,7 @@ public class FloorScrollParallax : MonoBehaviour
     }
 
     /// <summary>
-    /// Update is called once per frame.
+    /// Update is called once per frame. It makes the floor scroll.
     /// </summary>
     private void Update()
     {
