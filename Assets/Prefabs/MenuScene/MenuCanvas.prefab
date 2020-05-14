@@ -424,7 +424,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 859722937678213523}
-        m_MethodName: SetVolumeValue
+        m_MethodName: SetVolumeLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

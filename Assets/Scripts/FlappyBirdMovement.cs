@@ -66,7 +66,7 @@ public class FlappyBirdMovement : MonoBehaviour
         rigidBody.AddForce(Vector3.up * FLAP_FORCE);
 
         // Play flap sound
-        SoundManager.instance.PlaySound(SoundManager.SoundClips.Flap);
+        SoundManager.instance.PlaySound(SoundManager.SoundEffect.Flap);
     }
 
     /// <summary>
@@ -96,7 +96,7 @@ public class FlappyBirdMovement : MonoBehaviour
         {
             EventsManager.instance.GameOver();
 
-            SoundManager.instance.PlaySound(SoundManager.SoundClips.Crash);
+            SoundManager.instance.PlaySound(SoundManager.SoundEffect.Crash);
         }
     }
 
@@ -112,7 +112,7 @@ public class FlappyBirdMovement : MonoBehaviour
         {
             EventsManager.instance.TubesCrossed();
              
-            SoundManager.instance.PlaySound(SoundManager.SoundClips.Coin);
+            SoundManager.instance.PlaySound(SoundManager.SoundEffect.Coin);
         }
     }
 }
