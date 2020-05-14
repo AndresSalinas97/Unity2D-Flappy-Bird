@@ -2,8 +2,8 @@
 
 /// <summary>
 /// This class handles the bird movement and everything that comes with it
-/// (detecting when the bird crosses a tube pair or crashes and raising the
-/// corresponding events).
+/// (playing the sound effects, detecting when the bird crosses a tube pair or
+/// crashes and raising the corresponding events).
 /// </summary>
 public class FlappyBirdMovement : MonoBehaviour
 {
@@ -57,27 +57,26 @@ public class FlappyBirdMovement : MonoBehaviour
     }
 
     /// <summary>
-    /// Makes the bird flap.
+    /// Makes the bird flap and plays the flap sound.
     /// </summary>
     private void BirdFlap()
     {
-        // Make bird flap
         rigidBody.velocity = Vector3.zero;
         rigidBody.AddForce(Vector3.up * FLAP_FORCE);
 
-        // Play flap sound
         SoundManager.instance.PlaySound(SoundManager.SoundEffect.Flap);
     }
 
     /// <summary>
-    /// Makes the bird rotate as it moves so it feels more natural.
+    /// Makes the bird rotate as it moves so it looks more natural.
     /// </summary>
     private void BirdRotate()
     {
+        Debug.Log(rigidBody.velocity.y);
         // Limit the rotation when in free fall so the bird doesn't turn upside down
-        //if (transform.eulerAngles.z >= 0 && transform.eulerAngles.z < 90 ||
-        //    transform.eulerAngles.z > 270 && transform.eulerAngles.z < 360 ||
-        //    rigidBody.velocity.y > 0)
+        if (transform.eulerAngles.z >= 0 && transform.eulerAngles.z < 90 ||
+            transform.eulerAngles.z > 270 && transform.eulerAngles.z < 360 ||
+            rigidBody.velocity.y > 1)
         {
             // Rotation is proportional to the speed on the y axis
             float rotationAux = rigidBody.velocity.y * ROTATION_FORCE;
