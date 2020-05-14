@@ -286,7 +286,7 @@ GameObject:
   - component: {fileID: 1948284870651219232}
   - component: {fileID: 1948284870651219233}
   m_Layer: 0
-  m_Name: GameStatus
+  m_Name: PlayerStatusManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

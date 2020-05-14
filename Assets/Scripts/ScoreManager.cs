@@ -66,8 +66,6 @@ public class ScoreManager : MonoBehaviour
 
         filePath = Application.persistentDataPath + "/" + FILE_NAME;
 
-        Debug.Log(filePath);
-
         LoadBestScore();
     }
 
@@ -153,8 +151,6 @@ public class ScoreManager : MonoBehaviour
             file.Close();
 
             lastBestScore = bestScore;
-
-            Debug.Log("GUARDO");
         }
     }
 

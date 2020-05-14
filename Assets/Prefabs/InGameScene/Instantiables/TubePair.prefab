@@ -134,7 +134,7 @@ PrefabInstance:
     - target: {fileID: 2242540590393183404, guid: 85d3bc1ba1555894b932ed5f38f28cfd,
         type: 3}
       propertyPath: m_Name
-      value: Tube2
+      value: TubeDowm
       objectReference: {fileID: 0}
     - target: {fileID: 2242540590393183404, guid: 85d3bc1ba1555894b932ed5f38f28cfd,
         type: 3}
@@ -245,7 +245,7 @@ PrefabInstance:
     - target: {fileID: 2242540590393183404, guid: 85d3bc1ba1555894b932ed5f38f28cfd,
         type: 3}
       propertyPath: m_Name
-      value: Tube1
+      value: TubeUp
       objectReference: {fileID: 0}
     - target: {fileID: 2242540590393183404, guid: 85d3bc1ba1555894b932ed5f38f28cfd,
         type: 3}
