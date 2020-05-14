@@ -46,7 +46,7 @@ public class FlappyBirdMovement : MonoBehaviour
             }
 #elif UNITY_ANDROID || UNITY_IOS
             // CODE FOR ANDROID & iOS APPS (touchscreen input)
-            if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Ended)
+            if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began)
             {
                 BirdFlap();
             }
