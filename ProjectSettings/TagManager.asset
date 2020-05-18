@@ -41,9 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Fondo
+  - name: Background
     uniqueID: 82654329
     locked: 0
-  - name: PrimerPlano
+  - name: Foreground
     uniqueID: 3690041779
     locked: 0
