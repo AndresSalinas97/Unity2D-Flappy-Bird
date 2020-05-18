@@ -72,7 +72,6 @@ public class FlappyBirdMovement : MonoBehaviour
     /// </summary>
     private void BirdRotate()
     {
-        Debug.Log(rigidBody.velocity.y);
         // Limit the rotation when in free fall so the bird doesn't turn upside down
         if (transform.eulerAngles.z >= 0 && transform.eulerAngles.z < 90 ||
             transform.eulerAngles.z > 270 && transform.eulerAngles.z < 360 ||
