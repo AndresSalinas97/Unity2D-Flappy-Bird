@@ -10,14 +10,6 @@ Unity's Platform Dependent Compilation feature was used so you can control the f
 
 Go download the .apk (for Android) or .app (for MacOS) from the [releases page](https://github.com/AndresSalinas97/Unity2D-Flappy-Bird/releases) and try it out!!
 
-
-
-## Authors
-
-* Andrés Salinas Lima
-
-
-
 ## Some Extra Screenshots
 
 ![Main menu](./Docs/Images/Menu.png)
